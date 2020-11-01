@@ -1,0 +1,57 @@
+test_that("Functions run without any error or message", {
+  expect_silent(get_arrests(geography = "citywide"))
+  expect_silent(get_arrests(geography = "police_district"))
+  expect_silent(get_arrests(geography = "zip_code"))
+  expect_silent(get_arrests(geography = "census_tract"))
+
+  expect_silent(get_bail(geography = "citywide"))
+  expect_silent(get_bail(geography = "police_district"))
+  expect_silent(get_bail(geography = "zip_code"))
+  expect_silent(get_bail(geography = "census_tract"))
+
+  expect_silent(get_case_length(geography = "citywide"))
+  expect_silent(get_case_length(geography = "police_district"))
+  expect_silent(get_case_length(geography = "zip_code"))
+  expect_silent(get_case_length(geography = "census_tract"))
+
+  expect_silent(get_case_outcomes(geography = "citywide"))
+  expect_silent(get_case_outcomes(geography = "police_district"))
+  expect_silent(get_case_outcomes(geography = "zip_code"))
+  expect_silent(get_case_outcomes(geography = "census_tract"))
+
+  expect_silent(get_charges(geography = "citywide"))
+  expect_silent(get_charges(geography = "police_district"))
+  expect_silent(get_charges(geography = "zip_code"))
+  expect_silent(get_charges(geography = "census_tract"))
+
+  expect_silent(get_future_years_of_incarceration(geography = "citywide"))
+  expect_silent(get_future_years_of_incarceration(geography = "police_district"))
+  expect_silent(get_future_years_of_incarceration(geography = "zip_code"))
+  expect_silent(get_future_years_of_incarceration(geography = "census_tract"))
+
+  expect_silent(get_future_years_of_supervision(geography = "citywide"))
+  expect_silent(get_future_years_of_supervision(geography = "police_district"))
+  expect_silent(get_future_years_of_supervision(geography = "zip_code"))
+  expect_silent(get_future_years_of_supervision(geography = "census_tract"))
+
+  expect_silent(get_summary_arrests(geography = "citywide"))
+  expect_silent(get_summary_arrests(geography = "police_district"))
+  expect_silent(get_summary_arrests(geography = "zip_code"))
+  expect_silent(get_summary_arrests(geography = "census_tract"))
+
+  expect_silent(get_summary_case_length(geography = "citywide"))
+  expect_silent(get_summary_case_length(geography = "police_district"))
+  expect_silent(get_summary_case_length(geography = "zip_code"))
+  expect_silent(get_summary_case_length(geography = "census_tract"))
+
+  expect_silent(get_summary_case_outcomes(geography = "citywide"))
+  expect_silent(get_summary_case_outcomes(geography = "police_district"))
+  expect_silent(get_summary_case_outcomes(geography = "zip_code"))
+  expect_silent(get_summary_case_outcomes(geography = "census_tract"))
+
+  expect_silent(get_summary_charges(geography = "citywide"))
+  expect_silent(get_summary_charges(geography = "police_district"))
+  expect_silent(get_summary_charges(geography = "zip_code"))
+  expect_silent(get_summary_charges(geography = "census_tract"))
+
+})

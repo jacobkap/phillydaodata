@@ -1,5 +1,5 @@
 Package: phillyDAO
-Title: What the Package Does (One Line, Title Case)
+Title: Provides Helper Functions to Download Data from the Philadelphia District Attorney's Office Public Data Dashboard
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Jacob",
@@ -15,4 +15,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
     testthat,
-    covr
+    covr,
+    spelling
+Language: en-US
+Imports: 
+    data.table,
+    janitor

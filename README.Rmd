@@ -17,7 +17,10 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/phillyDAO)](https://CRAN.R-project.org/package=phillyDAO)
-"[![](http://cranlogs.r-pkg.org/badges/last-month/phillyDAO?color=green)](https://cran.r-project.org/package=phillyDAO)
+[![Travis build status](https://travis-ci.com/jacobkap/phillyDAO.svg?branch=master)](https://travis-ci.com/jacobkap/phillyDAO)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jacobkap/phillyDAO?branch=master&svg=true)](https://ci.appveyor.com/project/jacobkap/phillyDAO)
+[![Coverage status](https://codecov.io/gh/jacobkap/phillyDAO/branch/master/graph/badge.svg)](https://codecov.io/github/jacobkap/phillyDAO?branch=master)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/phillyDAO?color=blue)](https://cran.r-project.org/package=phillyDAO)
 <!-- badges: end -->
 
 The goal of phillyDAO is to ...
