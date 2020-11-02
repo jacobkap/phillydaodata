@@ -1,22 +1,22 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# phillyDAO
+# phillydao
 
 <!-- badges: start -->
 
 [![CRAN
-status](https://www.r-pkg.org/badges/version/phillyDAO)](https://CRAN.R-project.org/package=phillyDAO)
+status](https://www.r-pkg.org/badges/version/phillydao)](https://CRAN.R-project.org/package=phillydao)
 [![Travis build
-status](https://travis-ci.com/jacobkap/phillyDAO.svg?branch=main)](https://travis-ci.com/jacobkap/phillyDAO)
+status](https://travis-ci.com/jacobkap/phillydao.svg?branch=main)](https://travis-ci.com/jacobkap/phillydao)
 [![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/jacobkap/phillyDAO?branch=main&svg=true)](https://ci.appveyor.com/project/jacobkap/phillyDAO)
+status](https://ci.appveyor.com/api/projects/status/github/jacobkap/phillydao?branch=main&svg=true)](https://ci.appveyor.com/project/jacobkap/phillydao)
 [![Coverage
-status](https://codecov.io/gh/jacobkap/phillyDAO/branch/main/graph/badge.svg)](https://codecov.io/github/jacobkap/phillyDAO?branch=main)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/phillyDAO?color=blue)](https://cran.r-project.org/package=phillyDAO)
+status](https://codecov.io/gh/jacobkap/phillydao/branch/main/graph/badge.svg)](https://codecov.io/github/jacobkap/phillydao?branch=main)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/phillydao?color=blue)](https://cran.r-project.org/package=phillydao)
 <!-- badges: end -->
 
-`phillyDAO` is a collection of simpler helper functions that make it
+`phillydao` is a collection of simpler helper functions that make it
 easy to work with the publicly available data that the Philadelphia
 District Attorney’s Office makes available on their [Public Data
 Dashboard](https://data.philadao.com/download.html). This package is not
@@ -28,18 +28,18 @@ If you are going to be using the data, please read the [Limitations
 page](https://data.philadao.com/limitations.html) of the Philadelphia
 District Attorney’s Office closely as that discusses the caveats of the
 data. You should also read the [Definitions
-page]()<https://data.philadao.com/definitions.html>) which explains a
-lot of the terms used in the data and some of the assumptions that the
+page](https://data.philadao.com/definitions.html) which explains a lot
+of the terms used in the data and some of the assumptions that the
 District Attorney’s Office team took when it came to the data (e.g. how
 the supervision time is estimated).
 
 ## Installation
 
-You can install the released version of `phillyDAO` from
+You can install the released version of `phillydao` from
 [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("phillyDAO")
+install.packages("phillydao")
 ```
 
 ## Example
@@ -50,13 +50,13 @@ receive and the parameter geography determines which geographic unit the
 data will be in. The choices for this parameter are ‘citywide’,
 ‘police\_district’, ‘zip\_code’, and ‘census\_tract’. For
 ‘census\_tract’ the data will be weekly; for the other geographies,
-the data will be daily. If you do not input a geography, it will default
-to using citywide data.
+the data will be daily.\[1\] If you do not input a geography, it will
+default to using citywide data.
 
 If you don’t include any geography, it’ll default to citywide
 
 ``` r
-library(phillyDAO)
+library(phillydao)
 
 data <- get_summary_charges()
 dim(data)
@@ -202,3 +202,7 @@ tail(data)
 #> 78670                      0
 #> 78671                      0
 ```
+
+1.  According to the District Attorney’s Office’s website this is
+    because the Census tract file gets very large so they aggregate it
+    weekly to save space.
