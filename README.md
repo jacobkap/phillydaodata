@@ -19,10 +19,10 @@ status](https://codecov.io/gh/jacobkap/phillydao/branch/main/graph/badge.svg)](h
 `phillydao` is a collection of simpler helper functions that make it
 easy to work with the publicly available data that the Philadelphia
 District Attorney’s Office makes available on their [Public Data
-Dashboard](https://data.philadao.com/download.html). This package is not
-an official product of the Philadelphia District Attorney’s Office - it
-is merely a way to handle their already public and freely available
-data.
+Dashboard](https://data.philadao.com/download.html). **This package is
+not an official product of the Philadelphia District Attorney’s Office -
+it is merely a way to handle their already public and freely available
+data.**
 
 If you are going to be using the data, please read the [Limitations
 page](https://data.philadao.com/limitations.html) of the Philadelphia
