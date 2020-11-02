@@ -46,8 +46,18 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="news/index.html">Changelog</a>
+</li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/jacobkap/phillyDAO/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -64,41 +74,176 @@
 <a href="#phillydao" class="anchor"></a>phillyDAO</h1></div>
 <!-- badges: start -->
 
-<p>The goal of phillyDAO is to …</p>
+<p><code>phillyDAO</code> is a collection of simpler helper functions that make it easy to work with the publicly available data that the Philadelphia District Attorney’s Office makes available on their <a href="https://data.philadao.com/download.html">Public Data Dashboard</a>. This package is not an official product of the Philadelphia District Attorney’s Office - it is merely a way to handle their already public and freely available data.</p>
+<p>If you are going to be using the data, please read the <a href="https://data.philadao.com/limitations.html">Limitations page</a> of the Philadelphia District Attorney’s Office closely as that discusses the caveats of the data. You should also read the <a href="">Definitions page</a><a href="https://data.philadao.com/definitions.html" class="uri">https://data.philadao.com/definitions.html</a>) which explains a lot of the terms used in the data and some of the assumptions that the District Attorney’s Office team took when it came to the data (e.g. how the supervision time is estimated).</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of phillyDAO from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<p>You can install the released version of <code>phillyDAO</code> from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"phillyDAO"</span><span class="op">)</span></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<p>Each function in this package follows the same pattern where the function name (e.g. <code><a href="reference/get_arrests.html">get_arrests()</a></code>) determines which data you will receive and the parameter geography determines which geographic unit the data will be in. The choices for this parameter are ‘citywide’, ‘police_district’, ‘zip_code’, and ‘census_tract’. For ‘census_tract’ the data will be weekly; for the other geographies, the data will be daily. If you do not input a geography, it will default to using citywide data.</p>
+<p>If you don’t include any geography, it’ll default to citywide</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">phillyDAO</span><span class="op">)</span>
-<span class="co">## basic example code</span></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jacobkap/phillyDAO">phillyDAO</a></span><span class="op">)</span>
+
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_summary_charges.html">get_summary_charges</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
+<span class="co">#&gt; [1] 2456   11</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
+<span class="co">#&gt;         date retail_theft theft fraud_theft_of_services vandalism</span>
+<span class="co">#&gt; 1 2014-01-01            4     1                      18         0</span>
+<span class="co">#&gt; 2 2014-01-02            2     0                       4         1</span>
+<span class="co">#&gt; 3 2014-01-03            0     0                      13         1</span>
+<span class="co">#&gt; 4 2014-01-04            6     0                      13         0</span>
+<span class="co">#&gt; 5 2014-01-05            4     0                       5         0</span>
+<span class="co">#&gt; 6 2014-01-06            6     0                      15         1</span>
+<span class="co">#&gt;   alcohol_possession_by_minor public_drunkenness trespass disorderly_conduct</span>
+<span class="co">#&gt; 1                           2                  1       10                  6</span>
+<span class="co">#&gt; 2                           0                  1        2                 13</span>
+<span class="co">#&gt; 3                           0                  1        1                  4</span>
+<span class="co">#&gt; 4                           0                  1        2                  0</span>
+<span class="co">#&gt; 5                           0                  0        0                  4</span>
+<span class="co">#&gt; 6                           0                  0        0                  5</span>
+<span class="co">#&gt;   minor_violations_open_container_public_urination_smoking_violation</span>
+<span class="co">#&gt; 1                                                                 97</span>
+<span class="co">#&gt; 2                                                                 34</span>
+<span class="co">#&gt; 3                                                                 15</span>
+<span class="co">#&gt; 4                                                                 44</span>
+<span class="co">#&gt; 5                                                                  9</span>
+<span class="co">#&gt; 6                                                                 17</span>
+<span class="co">#&gt;   uncategorized_offenses</span>
+<span class="co">#&gt; 1                     41</span>
+<span class="co">#&gt; 2                     25</span>
+<span class="co">#&gt; 3                     19</span>
+<span class="co">#&gt; 4                     36</span>
+<span class="co">#&gt; 5                     15</span>
+<span class="co">#&gt; 6                     26</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
+<span class="co">#&gt;            date retail_theft theft fraud_theft_of_services vandalism</span>
+<span class="co">#&gt; 2451 2020-10-20            2     0                       0         0</span>
+<span class="co">#&gt; 2452 2020-10-21            6     0                       0         0</span>
+<span class="co">#&gt; 2453 2020-10-22            3     0                       0         0</span>
+<span class="co">#&gt; 2454 2020-10-23            0     0                       0         0</span>
+<span class="co">#&gt; 2455 2020-10-26            3     0                       0         0</span>
+<span class="co">#&gt; 2456 2020-10-27            1     0                       0         0</span>
+<span class="co">#&gt;      alcohol_possession_by_minor public_drunkenness trespass disorderly_conduct</span>
+<span class="co">#&gt; 2451                           0                  0        0                  0</span>
+<span class="co">#&gt; 2452                           0                  0        1                  0</span>
+<span class="co">#&gt; 2453                           0                  0        2                  0</span>
+<span class="co">#&gt; 2454                           0                  0        1                  0</span>
+<span class="co">#&gt; 2455                           0                  0        0                  0</span>
+<span class="co">#&gt; 2456                           0                  0        0                  1</span>
+<span class="co">#&gt;      minor_violations_open_container_public_urination_smoking_violation</span>
+<span class="co">#&gt; 2451                                                                  0</span>
+<span class="co">#&gt; 2452                                                                  0</span>
+<span class="co">#&gt; 2453                                                                  0</span>
+<span class="co">#&gt; 2454                                                                  0</span>
+<span class="co">#&gt; 2455                                                                  0</span>
+<span class="co">#&gt; 2456                                                                  0</span>
+<span class="co">#&gt;      uncategorized_offenses</span>
+<span class="co">#&gt; 2451                      1</span>
+<span class="co">#&gt; 2452                      4</span>
+<span class="co">#&gt; 2453                      3</span>
+<span class="co">#&gt; 2454                      1</span>
+<span class="co">#&gt; 2455                      1</span>
+<span class="co">#&gt; 2456                      0</span></pre></div>
+<p>Selecting a geography returns that data not in the geographic units you select, rather than for all of Philadelphia. It also adds a column indicating, for each row, what geography that row is for.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span>
-<span class="co">#&gt;      speed           dist       </span>
-<span class="co">#&gt;  Min.   : 4.0   Min.   :  2.00  </span>
-<span class="co">#&gt;  1st Qu.:12.0   1st Qu.: 26.00  </span>
-<span class="co">#&gt;  Median :15.0   Median : 36.00  </span>
-<span class="co">#&gt;  Mean   :15.4   Mean   : 42.98  </span>
-<span class="co">#&gt;  3rd Qu.:19.0   3rd Qu.: 56.00  </span>
-<span class="co">#&gt;  Max.   :25.0   Max.   :120.00</span></pre></div>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date.</p>
-<p>You can also embed plots, for example:</p>
-<p><img src="reference/figures/README-pressure-1.png" width="100%"></p>
-<p>In that case, don’t forget to commit and push the resulting figure files, so they display on GitHub!</p>
+<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_summary_charges.html">get_summary_charges</a></span><span class="op">(</span>geography <span class="op">=</span> <span class="st">"police_district"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
+<span class="co">#&gt; [1] 78671    12</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
+<span class="co">#&gt;         date police_district retail_theft theft fraud_theft_of_services</span>
+<span class="co">#&gt; 1 2014-01-01              01            1     0                       0</span>
+<span class="co">#&gt; 2 2014-01-01              02            0     0                       0</span>
+<span class="co">#&gt; 3 2014-01-01              03            0     0                       0</span>
+<span class="co">#&gt; 4 2014-01-01              05            0     0                       0</span>
+<span class="co">#&gt; 5 2014-01-01              06            0     0                       0</span>
+<span class="co">#&gt; 6 2014-01-01              07            0     0                       0</span>
+<span class="co">#&gt;   vandalism alcohol_possession_by_minor public_drunkenness trespass</span>
+<span class="co">#&gt; 1         0                           0                  0        0</span>
+<span class="co">#&gt; 2         0                           0                  1        0</span>
+<span class="co">#&gt; 3         0                           0                  0        0</span>
+<span class="co">#&gt; 4         0                           0                  0        0</span>
+<span class="co">#&gt; 5         0                           0                  0        0</span>
+<span class="co">#&gt; 6         0                           0                  0        0</span>
+<span class="co">#&gt;   disorderly_conduct</span>
+<span class="co">#&gt; 1                  0</span>
+<span class="co">#&gt; 2                  0</span>
+<span class="co">#&gt; 3                  0</span>
+<span class="co">#&gt; 4                  1</span>
+<span class="co">#&gt; 5                  0</span>
+<span class="co">#&gt; 6                  0</span>
+<span class="co">#&gt;   minor_violations_open_container_public_urination_smoking_violation</span>
+<span class="co">#&gt; 1                                                                  0</span>
+<span class="co">#&gt; 2                                                                  0</span>
+<span class="co">#&gt; 3                                                                  0</span>
+<span class="co">#&gt; 4                                                                  0</span>
+<span class="co">#&gt; 5                                                                  0</span>
+<span class="co">#&gt; 6                                                                  0</span>
+<span class="co">#&gt;   uncategorized_offenses</span>
+<span class="co">#&gt; 1                      1</span>
+<span class="co">#&gt; 2                      0</span>
+<span class="co">#&gt; 3                      0</span>
+<span class="co">#&gt; 4                      0</span>
+<span class="co">#&gt; 5                      0</span>
+<span class="co">#&gt; 6                      0</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
+<span class="co">#&gt;             date police_district retail_theft theft fraud_theft_of_services</span>
+<span class="co">#&gt; 78666 2020-10-27              49            0     0                       0</span>
+<span class="co">#&gt; 78667 2020-10-27              54            0     0                       0</span>
+<span class="co">#&gt; 78668 2020-10-27              56            0     0                       0</span>
+<span class="co">#&gt; 78669 2020-10-27              71            0     0                       0</span>
+<span class="co">#&gt; 78670 2020-10-27              77            0     0                       0</span>
+<span class="co">#&gt; 78671 2020-10-27         unknown            0     0                       0</span>
+<span class="co">#&gt;       vandalism alcohol_possession_by_minor public_drunkenness trespass</span>
+<span class="co">#&gt; 78666         0                           0                  0        0</span>
+<span class="co">#&gt; 78667         0                           0                  0        0</span>
+<span class="co">#&gt; 78668         0                           0                  0        0</span>
+<span class="co">#&gt; 78669         0                           0                  0        0</span>
+<span class="co">#&gt; 78670         0                           0                  0        0</span>
+<span class="co">#&gt; 78671         0                           0                  0        0</span>
+<span class="co">#&gt;       disorderly_conduct</span>
+<span class="co">#&gt; 78666                  0</span>
+<span class="co">#&gt; 78667                  0</span>
+<span class="co">#&gt; 78668                  0</span>
+<span class="co">#&gt; 78669                  0</span>
+<span class="co">#&gt; 78670                  0</span>
+<span class="co">#&gt; 78671                  0</span>
+<span class="co">#&gt;       minor_violations_open_container_public_urination_smoking_violation</span>
+<span class="co">#&gt; 78666                                                                  0</span>
+<span class="co">#&gt; 78667                                                                  0</span>
+<span class="co">#&gt; 78668                                                                  0</span>
+<span class="co">#&gt; 78669                                                                  0</span>
+<span class="co">#&gt; 78670                                                                  0</span>
+<span class="co">#&gt; 78671                                                                  0</span>
+<span class="co">#&gt;       uncategorized_offenses</span>
+<span class="co">#&gt; 78666                      0</span>
+<span class="co">#&gt; 78667                      0</span>
+<span class="co">#&gt; 78668                      0</span>
+<span class="co">#&gt; 78669                      0</span>
+<span class="co">#&gt; 78670                      0</span>
+<span class="co">#&gt; 78671                      0</span></pre></div>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="license">
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/jacobkap/phillyDAO/">https://​github.com/​jacobkap/​phillyDAO/​</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/jacobkap/phillyDAO/issues">https://​github.com/​jacobkap/​phillyDAO/​issues</a>
+</li>
+</ul>
+</div>
+<div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
@@ -116,9 +261,9 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://CRAN.R-project.org/package=phillyDAO"><img src="https://www.r-pkg.org/badges/version/phillyDAO" alt="CRAN status"></a></li>
-<li><a href="https://travis-ci.com/jacobkap/phillyDAO"><img src="https://travis-ci.com/jacobkap/phillyDAO.svg?branch=master" alt="Travis build status"></a></li>
-<li><a href="https://ci.appveyor.com/project/jacobkap/phillyDAO"><img src="https://ci.appveyor.com/api/projects/status/github/jacobkap/phillyDAO?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
-<li><a href="https://codecov.io/github/jacobkap/phillyDAO?branch=master"><img src="https://codecov.io/gh/jacobkap/phillyDAO/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
+<li><a href="https://travis-ci.com/jacobkap/phillyDAO"><img src="https://travis-ci.com/jacobkap/phillyDAO.svg?branch=main" alt="Travis build status"></a></li>
+<li><a href="https://ci.appveyor.com/project/jacobkap/phillyDAO"><img src="https://ci.appveyor.com/api/projects/status/github/jacobkap/phillyDAO?branch=main&amp;svg=true" alt="AppVeyor build status"></a></li>
+<li><a href="https://codecov.io/github/jacobkap/phillyDAO?branch=main"><img src="https://codecov.io/gh/jacobkap/phillyDAO/branch/main/graph/badge.svg" alt="Coverage status"></a></li>
 <li><a href="https://cran.r-project.org/package=phillyDAO"><img src="http://cranlogs.r-pkg.org/badges/grand-total/phillyDAO?color=blue"></a></li>
 </ul>
 </div>

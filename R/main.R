@@ -11,7 +11,8 @@
 #' @export
 #'
 #' @examples
-#' get_arrests("citywide")
+#' data <- get_arrests("citywide")
+#' head(data)
 get_arrests <- function(geography = c("citywide",
                                       "police_district",
                                       "zip_code",
@@ -34,7 +35,8 @@ get_arrests <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
-#' get_charges("citywide")
+#' data <- get_charges("citywide")
+#' head(data)
 get_charges <- function(geography = c("citywide",
                                       "police_district",
                                       "zip_code",
@@ -56,7 +58,8 @@ get_charges <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
-#' get_case_outcomes("citywide")
+#' data <- get_case_outcomes("citywide")
+#' head(data)
 get_case_outcomes <- function(geography = c("citywide",
                                             "police_district",
                                             "zip_code",
@@ -78,7 +81,8 @@ get_case_outcomes <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
-#' get_bail("citywide")
+#' data <- get_bail("citywide")
+#' head(data)
 get_bail <- function(geography = c("citywide",
                                    "police_district",
                                    "zip_code",
@@ -100,7 +104,8 @@ get_bail <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
-#' get_future_years_of_incarceration("citywide")
+#' data <- get_future_years_of_incarceration("citywide")
+#' head(data)
 get_future_years_of_incarceration <- function(geography = c("citywide",
                                                             "police_district",
                                                             "zip_code",
@@ -122,7 +127,8 @@ get_future_years_of_incarceration <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
-#' get_future_years_of_supervision("citywide")
+#' data <- get_future_years_of_supervision("citywide")
+#' head(data)
 get_future_years_of_supervision <- function(geography = c("citywide",
                                                           "police_district",
                                                           "zip_code",
@@ -144,7 +150,8 @@ get_future_years_of_supervision <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
-#' get_case_length("citywide")
+#' data <- get_case_length("citywide")
+#' head(data)
 get_case_length <- function(geography = c("citywide",
                                           "police_district",
                                           "zip_code",
@@ -166,7 +173,8 @@ get_case_length <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
-#' get_summary_arrests("citywide")
+#' data <- get_summary_arrests("citywide")
+#' head(data)
 get_summary_arrests <- function(geography = c("citywide",
                                               "police_district",
                                               "zip_code",
@@ -188,7 +196,8 @@ get_summary_arrests <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
-#' get_summary_charges("citywide")
+#' data <- get_summary_charges("citywide")
+#' head(data)
 get_summary_charges <- function(geography = c("citywide",
                                               "police_district",
                                               "zip_code",
@@ -211,7 +220,8 @@ get_summary_charges <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
-#' get_summary_case_outcomes("citywide")
+#' data <- get_summary_case_outcomes("citywide")
+#' head(data)
 get_summary_case_outcomes <- function(geography = c("citywide",
                                                     "police_district",
                                                     "zip_code",
@@ -233,7 +243,8 @@ get_summary_case_outcomes <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
-#' get_summary_case_length("citywide")
+#' data <- get_summary_case_length("citywide")
+#' head(data)
 get_summary_case_length <- function(geography = c("citywide",
                                                   "police_district",
                                                   "zip_code",

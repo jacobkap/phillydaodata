@@ -19,5 +19,6 @@ This function grabs the publicly available from the Philadelphia District
 Attorney's Office \href{https://data.philadao.com/download.html}{Public Data Dashboard}.
 }
 \examples{
-get_bail("citywide")
+data <- get_bail("citywide")
+head(data)
 }

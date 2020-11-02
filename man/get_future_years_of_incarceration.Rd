@@ -19,5 +19,6 @@ This function grabs the publicly available from the Philadelphia District
 Attorney's Office \href{https://data.philadao.com/download.html}{Public Data Dashboard}.
 }
 \examples{
-get_future_years_of_incarceration("citywide")
+data <- get_future_years_of_incarceration("citywide")
+head(data)
 }

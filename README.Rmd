@@ -17,17 +17,19 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/phillyDAO)](https://CRAN.R-project.org/package=phillyDAO)
-[![Travis build status](https://travis-ci.com/jacobkap/phillyDAO.svg?branch=master)](https://travis-ci.com/jacobkap/phillyDAO)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jacobkap/phillyDAO?branch=master&svg=true)](https://ci.appveyor.com/project/jacobkap/phillyDAO)
-[![Coverage status](https://codecov.io/gh/jacobkap/phillyDAO/branch/master/graph/badge.svg)](https://codecov.io/github/jacobkap/phillyDAO?branch=master)
+[![Travis build status](https://travis-ci.com/jacobkap/phillyDAO.svg?branch=main)](https://travis-ci.com/jacobkap/phillyDAO)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jacobkap/phillyDAO?branch=main&svg=true)](https://ci.appveyor.com/project/jacobkap/phillyDAO)
+[![Coverage status](https://codecov.io/gh/jacobkap/phillyDAO/branch/main/graph/badge.svg)](https://codecov.io/github/jacobkap/phillyDAO?branch=main)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/phillyDAO?color=blue)](https://cran.r-project.org/package=phillyDAO)
 <!-- badges: end -->
 
-The goal of phillyDAO is to ...
+`phillyDAO` is a collection of simpler helper functions that make it easy to work with the publicly available data that the Philadelphia District Attorney's Office makes available on their [Public Data Dashboard](https://data.philadao.com/download.html). This package is not an official product of the Philadelphia District Attorney's Office - it is merely a way to handle their already public and freely available data.  
+
+If you are going to be using the data, please read the [Limitations page](https://data.philadao.com/limitations.html) of the Philadelphia District Attorney's Office closely as that discusses the caveats of the data. You should also read the [Definitions page]()https://data.philadao.com/definitions.html) which explains a lot of the terms used in the data and some of the assumptions that the District Attorney's Office team took when it came to the data (e.g. how the supervision time is estimated). 
 
 ## Installation
 
-You can install the released version of phillyDAO from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of `phillyDAO` from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("phillyDAO")
@@ -35,25 +37,24 @@ install.packages("phillyDAO")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+Each function in this package follows the same pattern where the function name (e.g. `get_arrests()`) determines which data you will receive and the parameter geography determines which geographic unit the data will be in. The choices for this parameter are 'citywide', 'police_district', 'zip_code', and 'census_tract'. For 'census_tract' the data will be weekly; for the other geographies, the data will be daily.\footnote{According to the District Attorney's Office's website this is because the Census tract file gets very large so they aggregate it weekly to save space.} If you do not input a geography, it will default to using citywide data. 
 
-```{r example}
+If you don't include any geography, it'll default to citywide
+
+```{r}
 library(phillyDAO)
-## basic example code
+
+data <- get_summary_charges()
+dim(data)
+head(data)
+tail(data)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+Selecting a geography returns that data not in the geographic units you select, rather than for all of Philadelphia. It also adds a column indicating, for each row, what geography that row is for. 
 
-```{r cars}
-summary(cars)
+```{r }
+data <- get_summary_charges(geography = "police_district")
+dim(data)
+head(data)
+tail(data)
 ```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!

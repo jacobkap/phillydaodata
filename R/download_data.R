@@ -27,18 +27,21 @@ get_data <- function(data_type = c("arrests",
 
 
   link <- get_link(data_type, geography)
-
   data <- data.table::fread(link, verbose = FALSE, showProgress = FALSE)
   data <- clean_data(data)
-  data$geography <- geography
   return(data)
 
 }
 
 clean_data <- function(data) {
   names(data) <- janitor::make_clean_names(names(data))
-  names(data) <- gsub("^date_value$", "date", names(data))
+  names(data) <- gsub("^date_value$",    "date",             names(data))
+  names(data) <- gsub("^dispo_type$",    "disposition_type", names(data))
+  names(data) <- gsub("^dc_district$",   "police_district",  names(data))
+  names(data) <- gsub("^zcta_geoid$",    "zip_code",         names(data))
+  names(data) <- gsub("^tract_geoid10$", "census_tract",     names(data))
   data        <- data.frame(data)
+  data$date   <- as.Date(data$date)
   return(data)
 }
 
