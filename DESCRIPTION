@@ -7,10 +7,12 @@ Authors@R:
            role = c("aut", "cre"),
            email = "jkkaplan6@gmail.com",
            comment = c(ORCID = "0000-0002-0601-0387"))
-Description: This package provides a series of helper functions to download and
+Description: Provides a series of helper functions to download and
     clean the data that is publicly available on the Philadelphia District
     Attorney's Office Public Data Dashboard 
-    (<https://data.philadao.com/download.html>).
+    (<https://data.philadao.com/download.html>). This package is not an 
+    official product of the Philadelphia District Attorney's Office - it is 
+    merely a way to handle their already public and freely available data. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
