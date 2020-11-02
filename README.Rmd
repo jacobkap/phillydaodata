@@ -37,9 +37,9 @@ install.packages("phillydao")
 
 ## Example
 
-Each function in this package follows the same pattern where the function name (e.g. `get_arrests()`) determines which data you will receive and the parameter geography determines which geographic unit the data will be in. The choices for this parameter are 'citywide', 'police_district', 'zip_code', and 'census_tract'. For 'census_tract' the data will be weekly; for the other geographies, the data will be daily.^[According to the District Attorney's Office's website this is because the Census tract file gets very large so they aggregate it weekly to save space.] If you do not input a geography, it will default to using citywide data. 
+Each function in this package follows the same pattern where the function name (e.g. `get_arrests()`) determines which data you will receive and the parameter geography determines which geographic unit the data will be in. The choices for this parameter are "citywide", "police_district", "zip_code", and "census_tract". For "census_tract" the data will be weekly; for the other geographies, the data will be daily.^[According to the District Attorney's Office's website this is because the Census tract file gets very large so they aggregate it weekly to save space.]
 
-If you don't include any geography, it'll default to citywide
+If you don't include a geography parameter, it'll default to citywide.
 
 ```{r}
 library(phillydao)

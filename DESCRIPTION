@@ -1,5 +1,5 @@
 Package: phillydao
-Title: Provides Helper Functions to Download Data from the Philadelphia District Attorney's Office Public Data Dashboard
+Title: Download Data from the Philadelphia District Attorney's Office
 Version: 1.0.0
 Authors@R: 
     person(given = "Jacob",
@@ -7,7 +7,10 @@ Authors@R:
            role = c("aut", "cre"),
            email = "jkkaplan6@gmail.com",
            comment = c(ORCID = "0000-0002-0601-0387"))
-Description: What the package does (one paragraph).
+Description: This package provides a series of helper functions to download and
+    clean the data that is publicly available on the Philadelphia District
+    Attorney's Office Public Data Dashboard 
+    (<https://data.philadao.com/download.html>).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

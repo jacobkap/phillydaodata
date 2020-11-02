@@ -1,4 +1,5 @@
 test_that("Column names are right", {
+  skip_on_cran()
   expect_named(get_arrests(),                              main_column_names)
   expect_named(get_arrests(geography = "citywide"),        main_column_names)
   expect_named(get_arrests(geography = "police_district"), district_main_column_names)
@@ -74,6 +75,7 @@ test_that("Column names are right", {
 
 
 test_that("First date is right", {
+  skip_on_cran()
   expect_equal(get_arrests()$date[1],                              as.Date("2014-01-01"))
   expect_equal(get_arrests(geography = "citywide")$date[1],        as.Date("2014-01-01"))
   expect_equal(get_arrests(geography = "police_district")$date[1], as.Date("2014-01-01"))

@@ -1,4 +1,5 @@
 test_that("Functions run without any error or message", {
+  skip_on_cran()
   expect_silent(get_arrests())
   expect_silent(get_arrests(geography = "citywide"))
   expect_silent(get_arrests(geography = "police_district"))

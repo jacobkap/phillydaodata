@@ -1,4 +1,4 @@
 library(testthat)
-library(phillyDAO)
+library(phillydao)
 
-test_check("phillyDAO")
+test_check("phillydao")

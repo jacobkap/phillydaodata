@@ -47,13 +47,12 @@ install.packages("phillydao")
 Each function in this package follows the same pattern where the
 function name (e.g. `get_arrests()`) determines which data you will
 receive and the parameter geography determines which geographic unit the
-data will be in. The choices for this parameter are ‘citywide’,
-‘police\_district’, ‘zip\_code’, and ‘census\_tract’. For
-‘census\_tract’ the data will be weekly; for the other geographies,
-the data will be daily.\[1\] If you do not input a geography, it will
-default to using citywide data.
+data will be in. The choices for this parameter are “citywide”,
+“police\_district”, “zip\_code”, and “census\_tract”. For
+“census\_tract” the data will be weekly; for the other geographies,
+the data will be daily.\[1\]
 
-If you don’t include any geography, it’ll default to citywide
+If you don’t include a geography parameter, it’ll default to citywide.
 
 ``` r
 library(phillydao)

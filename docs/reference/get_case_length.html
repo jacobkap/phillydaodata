@@ -140,57 +140,11 @@ Attorney's Office <a href='https://data.philadao.com/download.html'>Public Data 
     <p>A data.frame with the data at the desired geographic unit.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'>get_case_length</span><span class='op'>(</span><span class='st'>"citywide"</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'>get_case_length</span><span class='op'>(</span><span class='st'>"citywide"</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;         date homicide rape robbery_gun robbery_other aggravated_assault_gun
-#&gt; 1 2014-01-02        0   74          74           131                    376
-#&gt; 2 2014-01-03        0    0           0             0                      0
-#&gt; 3 2014-01-04        0    0           0             0                      0
-#&gt; 4 2014-01-05        0    0           0             0                      0
-#&gt; 5 2014-01-06      591   20          20            78                    485
-#&gt; 6 2014-01-07      537  162         185           141                    164
-#&gt;   aggravated_assault_other other_assaults sexual_assault_and_other_sex_offenses
-#&gt; 1                      108            113                                   130
-#&gt; 2                        0              0                                     0
-#&gt; 3                        0              0                                     0
-#&gt; 4                        0              0                                     0
-#&gt; 5                      123             98                                   350
-#&gt; 6                      112            102                                    62
-#&gt;   burglary_residential burglary_commercial theft_of_motor_vehicle_tag
-#&gt; 1                  201                   0                          0
-#&gt; 2                    0                   0                          0
-#&gt; 3                    0                   0                          0
-#&gt; 4                    0                   0                          0
-#&gt; 5                  113                 107                          0
-#&gt; 6                   19                 282                          0
-#&gt;   theft_from_person theft_from_auto retail_theft theft auto_theft
-#&gt; 1                 0             122           86   197        122
-#&gt; 2                 0               0            0     0        328
-#&gt; 3                 0               0            0     0          0
-#&gt; 4                 0               0            0     0          0
-#&gt; 5                 0              83          122    82        136
-#&gt; 6               117               0          120   110         63
-#&gt;   fraud_theft_of_services embezzlement drug_possession drug_sales dui
-#&gt; 1                       0            0             144        164 181
-#&gt; 2                       0            0               0          0 273
-#&gt; 3                       0            0               0          0 434
-#&gt; 4                       0            0               0          0 492
-#&gt; 5                     458         1826             170        312 339
-#&gt; 6                      73            0             128        176 240
-#&gt;   possession_of_firearms prostitution_sex_work patronizing_prostitutes
-#&gt; 1                    201                    78                     300
-#&gt; 2                      0                     0                       0
-#&gt; 3                      0                     0                       0
-#&gt; 4                      0                     0                       0
-#&gt; 5                   1132                   103                       0
-#&gt; 6                     59                     0                      90
-#&gt;   threats_of_violence uncategorized_offenses
-#&gt; 1                   0                    149
-#&gt; 2                   0                      0
-#&gt; 3                   0                    434
-#&gt; 4                   0                      0
-#&gt; 5                  82                    131
-#&gt; 6                  82                    149</div></pre>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

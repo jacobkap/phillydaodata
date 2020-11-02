@@ -11,8 +11,10 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' data <- get_arrests("citywide")
 #' head(data)
+#' }
 get_arrests <- function(geography = c("citywide",
                                       "police_district",
                                       "zip_code",
@@ -35,8 +37,10 @@ get_arrests <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' data <- get_charges("citywide")
 #' head(data)
+#' }
 get_charges <- function(geography = c("citywide",
                                       "police_district",
                                       "zip_code",
@@ -58,8 +62,10 @@ get_charges <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' data <- get_case_outcomes("citywide")
 #' head(data)
+#' }
 get_case_outcomes <- function(geography = c("citywide",
                                             "police_district",
                                             "zip_code",
@@ -81,8 +87,10 @@ get_case_outcomes <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' data <- get_bail("citywide")
 #' head(data)
+#' }
 get_bail <- function(geography = c("citywide",
                                    "police_district",
                                    "zip_code",
@@ -104,8 +112,10 @@ get_bail <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' data <- get_future_years_of_incarceration("citywide")
 #' head(data)
+#' }
 get_future_years_of_incarceration <- function(geography = c("citywide",
                                                             "police_district",
                                                             "zip_code",
@@ -127,8 +137,10 @@ get_future_years_of_incarceration <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' data <- get_future_years_of_supervision("citywide")
 #' head(data)
+#' }
 get_future_years_of_supervision <- function(geography = c("citywide",
                                                           "police_district",
                                                           "zip_code",
@@ -150,8 +162,10 @@ get_future_years_of_supervision <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' data <- get_case_length("citywide")
 #' head(data)
+#' }
 get_case_length <- function(geography = c("citywide",
                                           "police_district",
                                           "zip_code",
