@@ -19,6 +19,8 @@ This function grabs the publicly available from the Philadelphia District
 Attorney's Office \href{https://data.philadao.com/download.html}{Public Data Dashboard}.
 }
 \examples{
+\dontrun{
 data <- get_summary_arrests("citywide")
 head(data)
+}
 }
