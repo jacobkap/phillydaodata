@@ -13,26 +13,26 @@ knitr::opts_chunk$set(
 )
 ```
 
-# phillydao
+# phillydaodata
 
 <!-- badges: start -->
-[![CRAN status](https://www.r-pkg.org/badges/version/phillydao)](https://CRAN.R-project.org/package=phillydao)
-[![Travis build status](https://travis-ci.com/jacobkap/phillydao.svg?branch=main)](https://travis-ci.com/jacobkap/phillydao)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jacobkap/phillydao?branch=main&svg=true)](https://ci.appveyor.com/project/jacobkap/phillydao)
-[![Coverage status](https://codecov.io/gh/jacobkap/phillydao/branch/main/graph/badge.svg)](https://codecov.io/github/jacobkap/phillydao?branch=main)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/phillydao?color=blue)](https://cran.r-project.org/package=phillydao)
+[![CRAN status](https://www.r-pkg.org/badges/version/phillydaodata)](https://CRAN.R-project.org/package=phillydaodata)
+[![Travis build status](https://travis-ci.com/jacobkap/phillydaodata.svg?branch=main)](https://travis-ci.com/jacobkap/phillydaodata)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/jacobkap/phillydaodata?branch=main&svg=true)](https://ci.appveyor.com/project/jacobkap/phillydaodata)
+[![Coverage status](https://codecov.io/gh/jacobkap/phillydaodata/branch/main/graph/badge.svg)](https://codecov.io/github/jacobkap/phillydaodata?branch=main)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/phillydaodata?color=blue)](https://cran.r-project.org/package=phillydaodata)
 <!-- badges: end -->
 
-`phillydao` is a collection of simpler helper functions that make it easy to work with the publicly available data that the Philadelphia District Attorney's Office makes available on their [Public Data Dashboard](https://data.philadao.com/download.html). **This package is not an official product of the Philadelphia District Attorney's Office - it is merely a way to handle their already public and freely available data.**  
+`phillydaodata` is a collection of simpler helper functions that make it easy to work with the publicly available data that the Philadelphia District Attorney's Office makes available on their [Public Data Dashboard](https://data.philadao.com/download.html). **This package is not an official product of the Philadelphia District Attorney's Office - it is merely a way to handle their already public and freely available data.**  
 
 If you are going to be using the data, please read the [Limitations page](https://data.philadao.com/limitations.html) of the Philadelphia District Attorney's Office closely as that discusses the caveats of the data. You should also read the [Definitions page](https://data.philadao.com/definitions.html) which explains a lot of the terms used in the data and some of the assumptions that the District Attorney's Office team took when it came to the data (e.g. how the supervision time is estimated). 
 
 ## Installation
 
-You can install the released version of `phillydao` from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of `phillydaodata` from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("phillydao")
+install.packages("phillydaodata")
 ```
 
 ## Example
@@ -42,7 +42,7 @@ Each function in this package follows the same pattern where the function name (
 If you don't include a geography parameter, it'll default to citywide.
 
 ```{r}
-library(phillydao)
+library(phillydaodata)
 
 data <- get_summary_charges()
 dim(data)

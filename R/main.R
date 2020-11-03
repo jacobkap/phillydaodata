@@ -187,8 +187,10 @@ get_case_length <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' data <- get_summary_arrests("citywide")
 #' head(data)
+#' }
 get_summary_arrests <- function(geography = c("citywide",
                                               "police_district",
                                               "zip_code",
