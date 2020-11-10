@@ -94,7 +94,7 @@
 <p>Each function in this package follows the same pattern where the function name (e.g. <code><a href="reference/get_arrests.html">get_arrests()</a></code>) determines which data you will receive and the parameter geography determines which geographic unit the data will be in. The choices for this parameter are “citywide”, “police_district”, “zip_code”, and “census_tract”. For “census_tract” the data will be weekly; for the other geographies, the data will be daily.<br><span class="math display">1</span><br></p>
 <p>If you don’t include a geography parameter, it’ll default to citywide.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jacobkap/phillydao">phillydaodata</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jacobkap/phillydaodata">phillydaodata</a></span><span class="op">)</span>
 
 <span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_summary_charges.html">get_summary_charges</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>

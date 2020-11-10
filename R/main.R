@@ -212,8 +212,10 @@ get_summary_arrests <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' data <- get_summary_charges("citywide")
 #' head(data)
+#' }
 get_summary_charges <- function(geography = c("citywide",
                                               "police_district",
                                               "zip_code",
@@ -236,8 +238,10 @@ get_summary_charges <- function(geography = c("citywide",
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' data <- get_summary_case_outcomes("citywide")
 #' head(data)
+#' }
 get_summary_case_outcomes <- function(geography = c("citywide",
                                                     "police_district",
                                                     "zip_code",
