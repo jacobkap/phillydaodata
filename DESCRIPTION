@@ -1,6 +1,6 @@
 Package: phillydaodata
 Title: Download Data from the Philadelphia District Attorney's Office
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: 
     person(given = "Jacob",
            family = "Kaplan",

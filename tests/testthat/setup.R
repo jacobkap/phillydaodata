@@ -1,5 +1,6 @@
 main_column_names <- c("date",
                        "homicide",
+                       "non_fatal_shooting",
                        "rape",
                        "robbery_gun",
                        "robbery_other",
